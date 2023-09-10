@@ -1066,11 +1066,16 @@ a {
     animation: flashing 0.7s;
     transition: var(--main-trantion);
 }
-
 .work-steps .info .box img {
     width: 64px;
     margin-right: 30px;
 
+}
+@media (max-width:767px){
+    .work-steps .info .box img{
+        width: 100px;
+        height: 100px;
+    }
 }
 
 .work-steps .info .box .text h3 {
