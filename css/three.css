@@ -1145,15 +1145,17 @@ a {
 
 .events .info .time .unit span:first-child {
     padding-top: 40px;
-    font-size: 30px;
+    font-size:18px;
     color: var(--main-color);
     font-weight: bold;
+    margin-top: -29px;
 }
 
 .events .info .time .unit span:last-child {
     padding: 8px 10px;
     border-top: 1px solid #d4d4d4;
-    font-size: 13px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .events .u {
