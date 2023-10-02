@@ -1,13 +1,15 @@
 let our_skills = document.querySelector(".our-skills");
 let spans = document.querySelectorAll(".the-progress span");
-window.onscroll = function () {
-  if (window.scrollY >= our_skills.offsetTop - 100) {
-    console.log("good");
-    spans.forEach((span) => {
-      span.style.width = span.dataset.width;
-    });
-  }
-};
+// window.onscroll = function () {
+//   if (window.scrollY >= our_skills.offsetTop) {
+//     console.log("good");
+//     spans.forEach((span) => {
+//       span.style.width = span.dataset.width;
+//     });
+//   }
+// };
+
+//events time
 // the End of the years
 let countdowndata = new Date("Dec 31,2023 23:59:59").getTime();
 let counter = setInterval(() => {
@@ -31,3 +33,35 @@ let counter = setInterval(() => {
     clearInterval(counter);
   }
 }, 1000);
+
+//stats
+let nums = document.querySelectorAll(".stats .number");
+let sectionss = document.querySelector(".stats");
+let started = false; //function started no
+
+//create scroll
+
+  window.onscroll = function () {
+  if (
+    (window.scrollY >= sectionss.offsetTop,
+    window.scrollY >= our_skills.offsetTop)
+  ) {
+    if (!started) {
+      nums.forEach((num) => start(num));
+      spans.forEach((span) => {
+        span.style.width = span.dataset.width;
+      });
+    }
+    started = true;
+  }
+};
+//create time count
+function start(el) {
+  let gols = el.dataset.gols;
+  let count = setInterval(() => {
+    el.textContent++;
+    if (el.textContent == gols) {
+      clearInterval(count);
+    }
+  }, 2000 / gols);
+}
